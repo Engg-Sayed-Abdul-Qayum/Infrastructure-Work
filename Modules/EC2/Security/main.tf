@@ -39,7 +39,7 @@ resource "aws_security_group" "HM-SG" {
     description = "Allow outbound traffic."
     from_port   = var.SG-outbound-port
     to_port     = var.SG-outbound-port
-    protocol    = var.SG-outbound-port
+    protocol    = var.SG-Outbound-Protocol
     cidr_blocks = [ var.SG-CIDR-Blocks ]
   }
 

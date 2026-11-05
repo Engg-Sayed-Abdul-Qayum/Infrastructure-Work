@@ -13,7 +13,7 @@ variable "SG-Inbound-Protocol" {
 variable "SG-Outbound-Protocol" {
   description = "The is the type of ports"
   type = string
-  default = "0"
+  default = "-1"
 }
 
 variable "SG-inbound-ssh-port" {
