@@ -14,7 +14,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket  = "hospital-management-s3-bucket"
+    bucket  = "hm-project-bucket"
     key     = "terraform.tfstate"
     encrypt = true
     region  = "us-east-1"
