@@ -5,6 +5,14 @@ resource "aws_instance" "Server" {
   vpc_security_group_ids = [ var.ec2-security-group ]
   key_name = var.ec2-key-name
   associate_public_ip_address = true
+  user_data = <<-USERDATA
+    #!/bin/bash
+    sudo apt update
+    mkdir -p /home/ubuntu/Test
+    cd /home/ubuntu/Test
+    echo "Hello, Im from Terraform Block :)" > Welcome.txt
+   USERDATA
+  user_data_replace_on_change = true
   tags = {
     Name = var.ec2-name
   }
