@@ -13,6 +13,12 @@ resource "aws_instance" "Server" {
     echo "Hello, Im from Terraform Block :)" > Welcome.txt
    USERDATA
   user_data_replace_on_change = true
+  root_block_device {
+    volume_size = 20
+    volume_type = "gp3"
+    iops = 3000
+    encrypted = true
+  }
   tags = {
     Name = var.ec2-name
   }
